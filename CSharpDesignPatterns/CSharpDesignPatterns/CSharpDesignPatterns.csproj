@@ -42,6 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractfactory\AbstractBikeFactory.cs" />
+    <Compile Include="Abstractfactory\IBikeFrame.cs" />
+    <Compile Include="Abstractfactory\IBikeSeat.cs" />
+    <Compile Include="Abstractfactory\MountainSeat.cs" />
+    <Compile Include="Abstractfactory\MountainBikeFactory.cs" />
+    <Compile Include="Abstractfactory\MountainFrame.cs" />
+    <Compile Include="Abstractfactory\RoadBikeFactory.cs" />
+    <Compile Include="Abstractfactory\RoadFrame.cs" />
+    <Compile Include="Abstractfactory\RoadSeat.cs" />
     <Compile Include="Base\AbstractBike.cs" />
     <Compile Include="Base\AbstractMountainBike.cs" />
     <Compile Include="Base\AbstractRoadBike.cs" />
@@ -55,11 +64,18 @@
     <Compile Include="Base\Touring.cs" />
     <Compile Include="Base\Vintage.cs" />
     <Compile Include="Base\WideWheel.cs" />
+    <Compile Include="Builder\BikeBuilder.cs" />
+    <Compile Include="Builder\BikeDirector.cs" />
+    <Compile Include="Builder\MountainBikeBuilder.cs" />
+    <Compile Include="Builder\MountainBikeDirector.cs" />
+    <Compile Include="Builder\RoadBikeBuilder.cs" />
+    <Compile Include="Builder\RoadBikeDirector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
