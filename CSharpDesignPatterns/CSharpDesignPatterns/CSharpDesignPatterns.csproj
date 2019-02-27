@@ -51,6 +51,8 @@
     <Compile Include="Abstractfactory\RoadBikeFactory.cs" />
     <Compile Include="Abstractfactory\RoadFrame.cs" />
     <Compile Include="Abstractfactory\RoadSeat.cs" />
+    <Compile Include="Adaptor\Ultrawheel.cs" />
+    <Compile Include="Adaptor\UltraWheelAdaptor.cs" />
     <Compile Include="Base\AbstractBike.cs" />
     <Compile Include="Base\AbstractMountainBike.cs" />
     <Compile Include="Base\AbstractRoadBike.cs" />
@@ -70,8 +72,14 @@
     <Compile Include="Builder\MountainBikeDirector.cs" />
     <Compile Include="Builder\RoadBikeBuilder.cs" />
     <Compile Include="Builder\RoadBikeDirector.cs" />
+    <Compile Include="Decorator\AbstractBikeOption.cs" />
+    <Compile Include="Decorator\CustomGripOption.cs" />
+    <Compile Include="Decorator\GoldFrameOption.cs" />
+    <Compile Include="Decorator\LeatherSheetOption.cs" />
+    <Compile Include="Decorator\WhiteTireOption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton\SerialNumberGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

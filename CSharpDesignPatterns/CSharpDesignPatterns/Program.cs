@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Abstractfactory;
 using Builder;
+using Singleton;
+using Adaptor;
+using Decorator;
+
 
 namespace CSharpDesignPatterns
 {
@@ -12,8 +16,54 @@ namespace CSharpDesignPatterns
     {
         static void Main(string[] args)
         {
-            BuilderPatternDemo();
+            DecoratorPatternDemo();
+            //AdaptorpatternDemo();
+            //SingletonPatternDemo();
+            //BuilderPatternDemo();
             //AbstractFactoryDemo();
+        }
+
+        private static void DecoratorPatternDemo()
+        {
+            //standrad touring bike
+            IBicycle myTourbike = new Touring(new NarrowWheel(24));
+            Console.WriteLine(myTourbike);
+
+            //Touring bike with Custom grips
+            myTourbike = new CustomGripOption(myTourbike);
+            Console.WriteLine(myTourbike);
+
+            //tour bike with leather seat
+            myTourbike = new LeatherSheetOption(myTourbike);
+            Console.WriteLine(myTourbike);
+            //tour bike with whitetire
+
+            myTourbike = new WhiteTireOption(myTourbike);
+            Console.WriteLine(myTourbike);
+
+        }
+
+        private static void AdaptorpatternDemo()
+        {
+            IList<IWheel> wheels = new List<IWheel>();
+            wheels.Add(new NarrowWheel(24));
+            wheels.Add(new WideWheel(20));
+            wheels.Add(new NarrowWheel(26));
+            wheels.Add(new UltraWheelAdaptor(new Ultrawheel(28)));
+
+            foreach (IWheel wheel in wheels)
+            {
+                Console.WriteLine(wheel);
+            }
+        }
+
+        private static void SingletonPatternDemo()
+        {
+            SerialNumberGenerator generator = SerialNumberGenerator.Instance;
+
+            Console.WriteLine("next serial" + generator.NextSerial);//either one of these is the proper way of calling
+            Console.WriteLine("next serial" + SerialNumberGenerator.Instance.NextSerial);//either one of these is the proper way of calling
+            Console.WriteLine("next serial" + generator.NextSerial);//either one of these is the proper way of calling
         }
 
         private static void BuilderPatternDemo()
@@ -26,6 +76,7 @@ namespace CSharpDesignPatterns
             IBicycle bicycle = director.Build(builder);
             Console.WriteLine(bicycle);
         }
+
         private static void AbstractFactoryDemo()
         {
             /* parent class object instance is created by its child
@@ -70,3 +121,12 @@ namespace CSharpDesignPatterns
         }
     }
 }
+
+
+
+
+
+
+
+
+

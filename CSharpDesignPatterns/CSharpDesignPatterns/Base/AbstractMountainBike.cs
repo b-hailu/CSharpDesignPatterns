@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CSharpDesignPatterns
 {
-    public class AbstractMountainBike : AbstractBike
+    public abstract class AbstractMountainBike : AbstractBike
     {
+        public override decimal price { get; } = 740.00m;
+
         public AbstractMountainBike(IWheel wheel)
                : this(BikeColor.Chrome, wheel)
         {
