@@ -50,9 +50,25 @@ namespace CSharpDesignPatterns
             return this.GetType().Name + "Bicycle Color is " + _color;
         }
 
-        public void paint(BikeColor color)
+        public virtual void paint(BikeColor color)
         {
-            throw new NotImplementedException();
+
+        }
+
+        public virtual void CleanFrame()
+        {
+            Console.WriteLine("Cleaning Frame...");
+        }
+
+        public virtual void AirTire()
+        {
+            Console.WriteLine(" Airing up tires...");
+
+        }
+
+        public virtual void TestRide()
+        {
+            Console.WriteLine(" Taking Bike for A test Ride");
         }
     }
 }

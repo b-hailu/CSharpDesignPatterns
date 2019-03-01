@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpDesignPatterns
 {
-    class Vintage : AbstractRoadBike
+    public class Vintage : AbstractRoadBike
     {
         public override decimal price { get; } = 600.00m;
 

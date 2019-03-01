@@ -15,5 +15,10 @@ namespace CSharpDesignPatterns
         decimal price { get; }
 
         void paint(BikeColor color);
+
+        void CleanFrame();
+        void AirTire();
+        void TestRide();
+
     }
 }
