@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Visitor;
 
 namespace CSharpDesignPatterns
 {
@@ -10,6 +11,8 @@ namespace CSharpDesignPatterns
     {
         private int _size;
         private bool _IsWide;
+        private Spoks _spoks;
+        private Bearings _bearings;
 
         public int Size
         {
@@ -36,6 +39,15 @@ namespace CSharpDesignPatterns
         {
             this._size = size;
             this._IsWide = isWide;
+            _spoks = new Spoks();
+            _bearings = new Bearings();
+        }
+
+        public virtual void AcceptVisitor(IWheelVisitor visitor)
+        {
+            _spoks.AcceptVisitor(visitor);
+            _bearings.AcceptVisitor(visitor);
+            visitor.Visit(this);
         }
 
         public override string ToString()
